@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
 const api = {
-  key: "1fc58b7ed8bba058762d4960b83c4013",
+  key: "49c28aad59af4885e56a5a5151cf0c36",
   base: "http://api.openweathermap.org/data/2.5/",
 };
 
 const App = () => {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
+  const[forecast, setForecast]=useState({});
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -19,8 +20,19 @@ const App = () => {
         });
       setQuery("");
       console.log(new Date( ));
+
+      fetch(`${api.base}forecast?q=${query}&units=metric&APPID=${api.key}`)
+  
+      .then((res) => res.json())
+      .then((result) => {
+        setForecast(result);
+        console.log(result );
+      });
     }
   };
+
+ 
+  
 
   const dateBuilder = (d) => {
     let months = [
@@ -83,6 +95,20 @@ const App = () => {
           </div>
         ) :  ""
         }
+<div class="scrolling-wrapper">
+{typeof weather.main != "undefined" ? ( 
+  typeof forecast.list != "undefined" ? (  
+  forecast.list.map((element) => (
+          <div className="card">
+            <div className="weather-box">
+             <div className="date">{(new Date(element.dt*1000)).getUTCHours()}</div>
+
+            <div className="temp">{Math.round(element.main.temp)}°c</div> 
+            </div>
+          </div>
+  ))):"") :  ""
+        }
+        </div>
       </main>
     </div>
   );

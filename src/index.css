@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
 }
 
-.app {
+.app { 
   background-repeat: no-repeat;
   background-image: url("./images/background1.jpg");
   background-size: cover;
@@ -106,3 +106,15 @@ search-box {
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
+/* 
+===================== */
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+  
+.card {
+    display: inline-block;
+  }
