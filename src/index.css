@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=IBM+Plex+Sans+Hebrew&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +12,7 @@ body {
 
 .app { 
   background-repeat: no-repeat;
-  background-image: url("./images/background1.jpg");
+  background-image: url("./images/cold.jpeg");
   background-size: cover;
   background-position: bottom;
   /* transition: 2.0 ease-out; */
@@ -19,14 +21,14 @@ body {
 }
 
 .app.warm {
-  background-image: url("./images/hot_weather.jpg");
+  background-image: url("./images/warm.jpg");
 }
 
 main {
   min-height: 100vh;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.75)
   );
   padding: 25px;
@@ -68,6 +70,7 @@ search-box {
   font-weight: 500;
   text-align: center;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  font-family: 'IBM Plex Sans Hebrew', sans-serif;
 }
 
 .location-box .date {
@@ -77,13 +80,15 @@ search-box {
   font-style: italic;
   text-align: center;
   text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+  font-family: 'IBM Plex Sans Hebrew', sans-serif;
 }
 
 .weather-box {
   text-align: center;
+  margin-top: 20px;
 }
 
-.weather-box .temp {
+.temp {
   position: relative;
   display: inline-block;
   margin: 30px auto;
@@ -92,8 +97,9 @@ search-box {
   padding: 15px 25px;
 
   color:#fff;
-  font-size: 102px;
+  font-size: 50px;
   font-weight: 900;
+  font-family: 'IBM Plex Sans Hebrew', sans-serif;
 
   text-shadow: 3px 6px rgba(50,50,70,0.5);
   text-align: center;
@@ -105,16 +111,27 @@ search-box {
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  display: inline-block;
+  padding-left: 20px;
 }
-/* 
-===================== */
 
-.scrolling-wrapper {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
+i.fas {
+  color: rgba(225,225,225,0.2);  
 }
-  
-.card {
-    display: inline-block;
-  }
+
+.min-max-temp{
+  position: relative;
+  display: inline-block;
+  padding: 15px 25px;
+  color:#fff;
+  font-size: 20px;
+  font-family: 'IBM Plex Sans Hebrew', sans-serif; 
+}
+hr {
+  border: none;
+  border-top: 5px double #fff;
+  text-align: center;
+  height: 5px;
+}
+
+
